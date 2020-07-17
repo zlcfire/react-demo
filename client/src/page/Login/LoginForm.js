@@ -2,6 +2,18 @@ import React from 'react'
 import { Form, Input, Row, Col } from 'antd'
 
 class LoginForm extends React.Component {
+    state = {
+        code: '', //验证码
+    }
+    /**
+     * 切换注册面板
+     */
+    goRigister = () => {
+        this.props.toggleShow()
+    }
+    componentDidMount() {
+        console.log(this.props)
+    }
     render() {
         return (<div>
             <h3 className="title">管理员登录</h3>
@@ -23,7 +35,7 @@ class LoginForm extends React.Component {
                 <Form.Item>
                     <div>
                         <div>登录</div>
-                        <div>注册</div>
+                        <div onClick={this.goRigister}>注册</div>
                     </div>
                 </Form.Item>
             </Form>
