@@ -8,34 +8,37 @@ class LoginForm extends React.Component {
     /**
      * 切换注册面板
      */
+    onSubmit = () => {
+        this.props.history.push('/')
+    }
     goRigister = () => {
+        // this.props.form.resetFields()
         this.props.toggleShow()
     }
     componentDidMount() {
-        console.log(this.props)
     }
     render() {
         return (<div>
             <h3 className="title">管理员登录</h3>
             <Form>
                 <Form.Item>
-                    <Input placeholder="用户名" />
+                    <Input className="myInput" placeholder="用户名" />
                 </Form.Item>
                 <Form.Item>
-                    <Input.Password placeholder="密码" />
+                    <Input type="password" className="myInput" placeholder="密码" />
                 </Form.Item>
                 <Form.Item>
                     <Row gutter={8}>
                         <Col span={15}>
-                            <Input placeholder="验证码" />
+                            <Input className="myInput" placeholder="验证码" />
                         </Col>
                         <Col span={9}></Col>
                     </Row>
                 </Form.Item>
                 <Form.Item>
-                    <div>
-                        <div>登录</div>
-                        <div onClick={this.goRigister}>注册</div>
+                    <div className="btn-box">
+                        <div className="loginBtn" onClick={this.onSubmit}>登录</div>
+                        <div className="registerBtn" onClick={this.goRigister}>注册</div>
                     </div>
                 </Form.Item>
             </Form>

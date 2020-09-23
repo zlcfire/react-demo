@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-const history = createBrowserHistory()
+import history from './utils/history'
+import { Provider } from 'react-redux'
+import { ConfigProvider } from 'antd'
+import zh_CN from 'antd/lib/locale-provider/zh_CN';
+import store from './store'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router history={history}>
+  // <Provider store={store}>
+  <Router history={history}>
+    <ConfigProvider locale={zh_CN}>
       <App />
-    </Router>
-  </React.StrictMode>,
+    </ConfigProvider >
+  </Router>
+  // </Provider>
+  ,
   document.getElementById('root')
 );
 

@@ -1,11 +1,13 @@
 import React from 'react'
-// import LoginForm from './LoginForm'
-// import RegisterForm from './RegisterForm'
-import LoadableComponent from '@/utils/LoadableComponent'
+import LoginForm from './LoginForm'
+import RegisterForm from './RegisterForm'
+// import Background from '@/components/Background'
+// import LoadableComponent from '@/utils/LoadableComponent'
 import './style.less'
 
-const LoginForm = LoadableComponent(import('./LoginForm'))
-const RegisterForm = LoadableComponent(import('./RegisterForm'))
+// const LoginForm = LoadableComponent(import('./LoginForm'))
+// const RegisterForm = LoadableComponent(import('./RegisterForm'))
+// const Background = LoadableComponent(import('@/components/Background'))
 
 class Login extends React.Component {
     state = {
@@ -21,15 +23,16 @@ class Login extends React.Component {
     }
     render() {
         const { show } = this.state
-        return (<div className="login-container">
-            <div className={`box ${show === 'login' ? 'active' : ''}`}>
-                <LoginForm toggleShow={this.toggleShow} />
-            </div>
-            <div className={`box ${show === 'register' ? 'active' : ''}`}>
-                <RegisterForm toggleShow={this.toggleShow} />
-            </div>
+        return (
+            <div className="login-container">
+                <div className={`box ${show === 'login' ? 'active' : ''}`}>
+                    <LoginForm toggleShow={this.toggleShow} />
+                </div>
+                <div className={`box ${show === 'register' ? 'active' : ''}`}>
+                    <RegisterForm toggleShow={this.toggleShow} />
+                </div>
 
-        </div>)
+            </div>)
     }
 }
 

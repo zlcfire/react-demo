@@ -2,6 +2,10 @@ import React from 'react'
 import { Form, Input } from 'antd'
 
 class RegisterForm extends React.Component {
+    backLogin = () => {
+        // this.props.form.resetFields()
+        this.props.toggleShow()
+    }
     render() {
         return (<div>
             <h3 className="title">用户注册</h3>
@@ -16,9 +20,9 @@ class RegisterForm extends React.Component {
                     <Input.Password placeholder="确认密码" />
                 </Form.Item>
                 <Form.Item>
-                    <div>
-                        <div>注册</div>
-                        <div>返回登录</div>
+                    <div className="btn-box">
+                        <div className="loginBtn">注册</div>
+                        <div className="registerBtn" onClick={this.backLogin}>返回登录</div>
                     </div>
                 </Form.Item>
             </Form>
