@@ -1,6 +1,8 @@
 import React from 'react'
 import { Form, Input, Row, Col } from 'antd'
+import { withRouter } from 'react-router-dom'
 
+@withRouter
 class LoginForm extends React.Component {
     state = {
         code: '', //验证码
@@ -9,7 +11,9 @@ class LoginForm extends React.Component {
      * 切换注册面板
      */
     onSubmit = () => {
+        console.log(this.props.match)
         this.props.history.push('/')
+        // browserHistory.push('/')
     }
     goRigister = () => {
         // this.props.form.resetFields()

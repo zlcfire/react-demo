@@ -4,11 +4,13 @@ import RegisterForm from './RegisterForm'
 // import Background from '@/components/Background'
 // import LoadableComponent from '@/utils/LoadableComponent'
 import './style.less'
+import { withRouter } from 'react-router-dom'
 
 // const LoginForm = LoadableComponent(import('./LoginForm'))
 // const RegisterForm = LoadableComponent(import('./RegisterForm'))
 // const Background = LoadableComponent(import('@/components/Background'))
 
+@withRouter
 class Login extends React.Component {
     state = {
         show: 'login'

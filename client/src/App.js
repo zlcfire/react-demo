@@ -5,7 +5,7 @@ import Login from './page/Login'
 import Index from './page/Index'
 import PrivateRoute from './components/PrivateRoute'
 
-// @withRouter
+@withRouter
 class App extends React.Component {
   render() {
     return (
@@ -17,6 +17,6 @@ class App extends React.Component {
   }
 }
 
-export default withRouter(App);
-// export default App;
+// export default withRouter(App);
+export default App;
 
