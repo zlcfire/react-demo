@@ -11,7 +11,6 @@ class LoginForm extends React.Component {
      * 切换注册面板
      */
     onSubmit = () => {
-        console.log(this.props.match)
         this.props.history.push('/')
         // browserHistory.push('/')
     }

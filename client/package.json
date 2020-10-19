@@ -27,7 +27,7 @@
     "screenfull": "^4.2.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "react-app-rewired start && set PORT=9900",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
