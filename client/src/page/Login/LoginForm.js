@@ -11,8 +11,8 @@ class LoginForm extends React.Component {
      * 切换注册面板
      */
     onSubmit = () => {
+        // this.props.history.push('/index')
         this.props.history.push('/')
-        // browserHistory.push('/')
     }
     goRigister = () => {
         // this.props.form.resetFields()

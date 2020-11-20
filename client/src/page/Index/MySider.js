@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Menu, Icon } from 'antd'
-import { menu } from '../tabs'
+import { tabs, menu } from '../tabs'
 
 class MySider extends React.Component {
 
@@ -22,7 +22,7 @@ class MySider extends React.Component {
                 } else {
                     return (
                         <Menu.SubMenu key={item.key} title={<span>{item.icon && <Icon type={item.icon} />}<span>{item.name}</span></span>}>
-                            {this.renderMenu(menu)}
+                            {this.renderMenu(item.children)}
                         </Menu.SubMenu>
                     )
                 }
@@ -33,7 +33,21 @@ class MySider extends React.Component {
      * 
      * 点击侧边菜单添加标签页 
      */
-    addPane = (menu) => {
+    addPane = (item) => {
+        const panes = this.props.panes.slice()
+        const activeMenu = item.key
+        //如果标签页不存在就添加一个
+        if (!panes.find(i => i.key === activeMenu)) {
+            panes.push({
+                name: item.name,
+                key: item.key,
+                content: tabs[item.key] || item.name
+            })
+        }
+        this.props.onChangeState({
+            panes,
+            activeMenu
+        })
     }
 
     render() {

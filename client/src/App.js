@@ -10,8 +10,9 @@ class App extends React.Component {
   render() {
     return (
       <Switch>
-        <Route path="/login" component={Login} />
-        <PrivateRoute path="/" component={Index} />
+        {/* <Route path="/login" component={Login} /> */}
+        {/* <PrivateRoute path="/" component={Index} /> */}
+        <Route path="/" component={Index} /> 
       </Switch>
     );
   }
